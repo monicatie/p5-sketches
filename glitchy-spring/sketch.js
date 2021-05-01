@@ -9,8 +9,8 @@ function setup() {
     format: 'webm',
     framerate: 15
   });
-  img1 = loadImage('/assets/DSC03305.jpg'); // Load the image
-  img2 = loadImage('/assets/DSC03308.jpg'); // Load the image
+  img1 = loadImage('../assets/DSC03305.jpg'); // Load the image
+  img2 = loadImage('../assets/DSC03308.jpg'); // Load the image
 }
 
 function draw() {
