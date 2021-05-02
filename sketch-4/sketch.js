@@ -15,21 +15,34 @@ function setup() {
 }
 
 function draw() {
+  noFill()
   const midLine = canvas.height/2
   line(0, midLine, canvas.width, midLine);
-  noFill();
 
   const mainCurve = generateCenterCurve(canvas);
 
+  drawCurve(generateParallelCurve(mainCurve, -30))
+  drawCurve(generateParallelCurve(mainCurve, -70), 10, 51)
   drawCurve(mainCurve);
+  drawCurve(generateParallelCurve(mainCurve, 10))
+  drawCurve(generateParallelCurve(mainCurve, 100))
+  drawCurve(generateParallelCurve(mainCurve, 110))
+
   noLoop();
 }
+
+function generateParallelCurve(points, offset) {
+  return points.map(p => {
+    return {x: p.x, y: p.y + offset}
+  })
+}
+
 
 /**
  * Generate a random up and down curve that kind of wavers around
  * but within canvas bounds
  * @param {object} canvas 
- * @returns 
+ * @returns array of points {x: , y: }
  */
 function generateCenterCurve(canvas) {
   const midLine = canvas.height/2
@@ -67,9 +80,16 @@ function generateCenterCurve(canvas) {
 /**
  * 
  * @param {array} points - array of {x,y} tuple coordinates
+ * @param {int} thickness - thickness
  */
-function drawCurve(points) {
+function drawCurve(points, thickness, fillColor) {
+  if (fillColor) {
+    fill(fillColor)
+  } else {
+    noFill()
+  }
   beginShape();
   points.forEach(p => curveVertex(p.x,p.y))
+  points.reverse().forEach(p => curveVertex(p.x, p.y + thickness))
   endShape();
 }
