@@ -21,12 +21,15 @@ function draw() {
 
   const mainCurve = generateCenterCurve(canvas);
 
-  drawCurve(generateParallelCurve(mainCurve, -30))
-  drawCurve(generateParallelCurve(mainCurve, -70), 10, 51)
+  drawCurve(generateParallelCurve(mainCurve, -70), 10, 50)
+  drawCurve(generateParallelCurve(mainCurve, -55))
+  drawCurve(generateParallelCurve(mainCurve, -52))
+  drawCurve(generateParallelCurve(mainCurve, -30), 20, 30)
   drawCurve(mainCurve);
-  drawCurve(generateParallelCurve(mainCurve, 10))
-  drawCurve(generateParallelCurve(mainCurve, 100))
-  drawCurve(generateParallelCurve(mainCurve, 110))
+  drawCurve(generateParallelCurve(mainCurve, 10), 40, 50)
+  drawCurve(generateParallelCurve(mainCurve, 90))
+  drawCurve(generateParallelCurve(mainCurve, 100), 10, 50)
+  drawCurve(generateParallelCurve(mainCurve, 120))
 
   noLoop();
 }
