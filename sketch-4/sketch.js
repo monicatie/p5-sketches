@@ -64,7 +64,7 @@ function generateCenterCurve(canvas) {
     } else if (lastY < canvas.border) {
       yVariability = randomGaussian(10, 5)
     } else {
-      yVariability = randomGaussian(20, 10)
+      yVariability = randomGaussian(15, 8)
     }
     let y = randomGaussian(lastY, yVariability);
 
